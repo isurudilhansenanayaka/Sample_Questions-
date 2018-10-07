@@ -72,3 +72,16 @@ class PStudent extends UStudent {
 		System.out.println("Program : "+this.program+"\n"+"Amount Pay : "+this.amount_pay+"\n"+"Status : "+this.status);
 	}
 }
+class AcadeEmp extends Employee{
+	private String field_study;
+	private String degree_held;
+	public AcadeEmp(String name,String gender,String dob,String empNo,int bSalary,int leaves,String deduction,int noPay,String field_study,String degree_held){
+		super(name,gender,dob,empNo,bSalary,leaves,deduction,noPay);
+		this.field_study=field_study;
+		this.degree_held=degree_held;
+	}	
+	public void display(){
+		super.display();
+		System.out.println("Field Study : "+this.field_study+"\n"+"Degree held : "+this.degree_held);	
+	}
+}
