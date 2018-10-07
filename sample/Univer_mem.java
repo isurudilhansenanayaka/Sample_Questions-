@@ -85,3 +85,22 @@ class AcadeEmp extends Employee{
 		System.out.println("Field Study : "+this.field_study+"\n"+"Degree held : "+this.degree_held);	
 	}
 }
+class NonAcadeEmp extends Employee{
+	private String department;
+	private int ot_hours;
+	private int ot_hour_pay;
+	public NonAcadeEmp(String name,String gender,String dob,String empNo,int bSalary,int leaves,String deduction,int noPay,String department,int ot_hours,int ot_hour_pay){
+		super(name,gender,dob,empNo,bSalary,leaves,deduction,noPay);
+		this.department=department;
+		this.ot_hours=ot_hours;
+		this.ot_hour_pay=ot_hour_pay;
+	}	
+	public void display(){
+		super.display();
+		System.out.println("Department Name : "+this.department+"\n"+"Overtime Hours : "+this.ot_hours+"\n"+"OT Hours Pay :"+this.ot_hour_pay);	
+		System.out.println("Total Salary : "+totSalary(bSalary,ot_hours,ot_hour_pay));
+	}
+	public double totSalary(int bSalary,int ot_hours,int ot_hour_pay){
+		return (bSalary+calculateEPF(bSalary)+ot_hour_pay*ot_hours);
+	}
+}
