@@ -40,3 +40,19 @@ class Student extends Univer_mem{
 		System.out.println("Regestem NO : "+this.regNo);
 	}
 }
+
+class UStudent extends Student {
+	private int cNum;
+	private String subject;
+	private String degree;
+	public UStudent(String name,String gender,String dob,String regNo,int cNum,String subject,String degree){
+		super(name,gender,dob,regNo);
+		this.cNum=cNum;
+		this.subject=subject;
+		this.degree=degree;
+	}
+	public void display(){
+		super.display();
+		System.out.println("Combination Number : "+this.cNum+"\n"+"Subject : "+this.subject+"\n"+"Degree :  "+this.degree);
+	}
+}
