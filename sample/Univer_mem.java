@@ -104,3 +104,21 @@ class NonAcadeEmp extends Employee{
 		return (bSalary+calculateEPF(bSalary)+ot_hour_pay*ot_hours);
 	}
 }
+class PermanentEmp extends AcadeEmp{
+	private int trave_allow;
+	private int resea_allow;
+	public PermanentEmp(String name,String gender,String dob,String empNo,int bSalary,int leaves,String deduction,int noPay,String field_study,String degree_held,int trave_allow,int resea_allow){
+		super(name,gender,dob,empNo,bSalary,leaves,deduction,noPay,field_study,degree_held);
+		this.trave_allow=trave_allow;
+		this.resea_allow=resea_allow;
+	}	
+	public void display(){
+		super.display();
+		System.out.println("Travelling allowencess : "+this.trave_allow+"\n"+"Research allowencess : "+this.resea_allow);
+		System.out.println("Total Salary : "+totSalary(trave_allow,resea_allow,bSalary));	
+	}
+	public double totSalary(int trave_allow,int resea_allow,int bSalary){
+		return (resea_allow+trave_allow+bSalary+calculateEPF(bSalary));
+
+	}
+}
