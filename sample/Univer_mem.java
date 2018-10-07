@@ -29,3 +29,14 @@ class Univer_mem{
 	}
 
 }
+class Student extends Univer_mem{
+	 String regNo;
+	public Student(String name,String gender,String dob,String regNo){
+		super(name,gender,dob);
+		this.regNo=regNo;
+	}
+	public void display(){
+		super.display();
+		System.out.println("Regestem NO : "+this.regNo);
+	}
+}
