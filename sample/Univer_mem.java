@@ -56,3 +56,19 @@ class UStudent extends Student {
 		System.out.println("Combination Number : "+this.cNum+"\n"+"Subject : "+this.subject+"\n"+"Degree :  "+this.degree);
 	}
 }
+
+class PStudent extends UStudent {
+	private String status;
+	private String program;
+	private int amount_pay;
+	public PStudent(String name,String gender,String dob,String regNo,int cNum,String subject,String degree,String program,int amount_pay,String status){
+		super(name,gender,dob,regNo,cNum,subject,degree);
+		this.program=program;
+		this.amount_pay=amount_pay;
+		this.status=status;
+	}
+	public void display(){
+		super.display();
+		System.out.println("Program : "+this.program+"\n"+"Amount Pay : "+this.amount_pay+"\n"+"Status : "+this.status);
+	}
+}
