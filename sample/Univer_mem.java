@@ -122,3 +122,18 @@ class PermanentEmp extends AcadeEmp{
 
 	}
 }
+class TempEmp extends AcadeEmp{
+	private String duration;
+	public TempEmp(String name,String gender,String dob,String empNo,int bSalary,int leaves,String deduction,int noPay,String field_study,String degree_held,String duration){
+		super(name,gender,dob,empNo,bSalary,leaves,deduction,noPay,field_study,degree_held);
+		this.duration=duration;
+	}	
+	public void display(){
+		super.display();
+		System.out.println("Duration : "+this.duration);	
+		System.out.println("Total Salary : "+totSalary(bSalary));
+	}
+	public double totSalary(int bSalary){
+		return (bSalary+calculateEPF(bSalary));
+	}
+}
