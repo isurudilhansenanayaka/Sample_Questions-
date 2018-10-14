@@ -42,31 +42,29 @@ class ThreadAsign
 
         
 
-        
+        Thread t2=new Thread(new Runnable(){
 
-        
+            public void run(){
+
+                IncCount(20,40);
+
+            }
+
+        });
 
         
 
         t1.start();
 
+        t2.start();
+
+        
+
         
 
         
 
-        try{
-
-            t1.join();
-
-            
-
-        }catch(InterruptedException e){
-
-            System.out.println("INTERRUPTED!");
-
-        }
-
-    
+        System.out.println("Total No.of Virus Count : "+count);
 
     }
 
