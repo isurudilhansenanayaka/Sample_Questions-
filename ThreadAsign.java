@@ -22,7 +22,15 @@ class ThreadAsign
 
         }
 
+        try{
+
+            Thread.sleep(1000);
+
+        }catch(InterruptedException e){
+
         
+
+        }
 
     }
 
@@ -60,7 +68,17 @@ class ThreadAsign
 
         
 
-        
+        try{
+
+            t1.join();
+
+            t2.join();
+
+        }catch(InterruptedException e){
+
+            System.out.println("INTERRUPTED!");
+
+        }
 
         
 
