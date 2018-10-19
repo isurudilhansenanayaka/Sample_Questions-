@@ -14,6 +14,10 @@ class Counter  implements Runnable{
         c--;        
     }
 
+    public  int getValue() {
+        return c;
+    }
+    
     
     public void run() {
         synchronized(this){
